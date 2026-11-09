@@ -42,7 +42,6 @@ class SitemapController extends Controller
             ['/about', 0.6, 'monthly'],
             ['/services', 0.6, 'monthly'],
             ['/team', 0.5, 'monthly'],
-            ['/flights', 0.5, 'weekly'],
             ['/visa', 0.8, 'daily'],
             ['/umrah', 0.9, 'daily'],
             ['/hotels', 0.7, 'daily'],

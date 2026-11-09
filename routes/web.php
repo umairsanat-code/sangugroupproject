@@ -56,6 +56,10 @@ Route::middleware(DetectScraping::class)->get('/scrape-test/{id}', function ($id
 });
 // Dynamic XML sitemap (must be registered before the catch-all fallback route).
 Route::get('/sitemap.xml', [\App\Http\Controllers\SitemapController::class, 'index']);
+// Retire the standalone flight search page while preserving flight enquiry services elsewhere.
+Route::get('/flights', function () {
+    abort(404);
+});
 Route::get('/{any}', function (\App\Services\SeoResolver $seoResolver) {
     // Determine the current path exactly as it would be matched by the DB.
     $path = '/' . request()->path();

@@ -34,23 +34,23 @@
         <div class="hero-content-wrap">
           <div class="hero-trust-tag">
             <span class="pulse-dot"></span>
-            <span>Agencia Oficial en Barcelona (Badalona) y Pakistán</span>
+            <span>{{ t('Agencia Oficial en Barcelona (Badalona) y Pakistán') }}</span>
           </div>
 
           <h1 class="hero-main-title">
-            Su Agencia de Viajes Internacional y <em>Especialista en Umrah</em>
+            {{ t('Su Agencia de Viajes Internacional y Especialista en Umrah') }}
           </h1>
 
           <p class="hero-subtitle">
-            Billetes de avión al mejor precio a Pakistán, Dubái y todo el mundo. Paquetes de Umrah garantizados con salidas desde Barcelona y Madrid, hoteles 5★ frente al Haram y tramitación de visados.
+            {{ t('Billetes de avión al mejor precio a Pakistán, Dubái y todo el mundo. Paquetes de Umrah garantizados con salidas desde Barcelona y Madrid, hoteles 5★ frente al Haram y tramitación de visados.') }}
           </p>
 
           <div class="hero-cta-buttons">
             <router-link to="/umrah-desde-espana" class="btn btn-gold btn-hero">
-              <i class="fa-solid fa-kaaba"></i> Paquetes Umrah España
+              <i class="fa-solid fa-kaaba"></i> {{ t('Paquetes Umrah España') }}
             </router-link>
             <a href="https://wa.me/34672068148?text=Hola%20SanguGroup%2C%20deseo%20presupuesto%20de%20vuelos%20o%20Umrah" target="_blank" rel="noopener" class="btn btn-outline-light btn-hero">
-              <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+              <i class="fa-brands fa-whatsapp"></i> {{ t('Consultar por WhatsApp') }}
             </a>
           </div>
 
@@ -317,7 +317,7 @@
     <section class="services-overview-section">
       <div class="container">
         <div class="section-head text-center">
-          <span class="eyebrow">Servicios Integrales de Viaje</span>
+          <span class="eyebrow">{{ t('Servicios Integrales de Viaje') }}</span>
           <h2 class="section-title">Soluciones Completas para Viajeros y Peregrinos</h2>
           <p class="section-intro">Desde la emisión de su billete de avión hasta el acompañamiento en los Santos Lugares, le garantizamos profesionalidad y cercanía en cada etapa.</p>
         </div>
@@ -328,7 +328,7 @@
             <div class="srv-icon-box"><i class="fa-solid fa-plane-departure"></i></div>
             <h3>Billetes de Avión Internacionales</h3>
             <p>Vuelos baratos a Pakistán (Lahore, Islamabad, Karachi), Dubái, Arabia Saudí, Londres y todo el mundo. Franquicia de equipaje especial hasta 46 kg y reemisión de billetes sin complicaciones.</p>
-            <router-link to="/flights" class="srv-link">Reservar Vuelos <i class="fa-solid fa-arrow-right"></i></router-link>
+            <router-link to="/contact" class="srv-link">Consultar Vuelos <i class="fa-solid fa-arrow-right"></i></router-link>
           </div>
 
           <!-- Service 2 -->
@@ -755,6 +755,7 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import axios from 'axios';
+import { t } from './locale.js';
 
 const router = useRouter();
 

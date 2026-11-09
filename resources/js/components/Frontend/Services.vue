@@ -107,7 +107,7 @@
                                 <i class="fas fa-check-circle text-secondary"></i> {{ item }}
                             </div>
                         </div>
-                        <router-link to="/flights" class="btn-premium-primary !px-10 !py-4 inline-flex">
+                        <router-link to="/contact" class="btn-premium-primary !px-10 !py-4 inline-flex">
                             Search Flights <i class="fas fa-arrow-right ml-2 text-xs"></i>
                         </router-link>
                     </div>

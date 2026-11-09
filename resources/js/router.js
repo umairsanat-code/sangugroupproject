@@ -3,7 +3,6 @@ import { createRouter, createWebHistory } from 'vue-router';
 // Frontend
 const FrontendLayout = () => import('./components/Frontend/Layout.vue');
 const Home = () => import('./components/Frontend/Home.vue');
-const FrontendFlights = () => import('./components/Frontend/FlightSearch.vue');
 const FrontendTicketBooking = () => import('./components/Frontend/TicketBooking.vue');
 const FrontendUmrahPackages = () => import('./components/Frontend/UmrahPackages.vue');
 const FrontendTeam = () => import('./components/Frontend/Team.vue');
@@ -44,7 +43,6 @@ const routes = [
         children: [
             { path: '', component: Home, name: 'home' },
             { path: 'about', component: AboutUs, name: 'frontend.about' },
-            { path: 'flights', component: FrontendFlights, name: 'frontend.flights' },
             { path: 'book', component: FrontendTicketBooking, name: 'frontend.book' },
             { path: 'umrah', component: FrontendUmrahPackages, name: 'frontend.umrah' },
             { path: 'umrah/:id', component: UmrahDetails, name: 'frontend.umrah.details' },

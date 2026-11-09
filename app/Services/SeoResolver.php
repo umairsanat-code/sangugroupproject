@@ -38,7 +38,6 @@ class SeoResolver
         '/about'     => ['About Sangu Travel & Tours | Trusted Travel Agency', 'Learn about Sangu Travel & Tours — a travel agency offering flights, visa assistance, Umrah packages and hotel bookings worldwide.', 'index, follow', 'website'],
         '/services'  => ['Our Travel Services | Sangu Travel & Tours', 'Flights, visa services, Umrah packages, hotels and custom itineraries — explore the full range of Sangu Travel & Tours services.', 'index, follow', 'website'],
         '/team'      => ['Our Team | Sangu Travel & Tours', 'Meet the travel experts behind Sangu Travel & Tours, dedicated to arranging your flights, visas, Umrah and hotel bookings.', 'index, follow', 'website'],
-        '/flights'   => ['Flight Booking Worldwide | Sangu Travel & Tours', 'Search and book flights with airlines worldwide through Sangu Travel & Tours.', 'index, follow', 'website'],
         '/book'      => ['Book Your Trip | Sangu Travel & Tours', 'Complete your booking with Sangu Travel & Tours.', 'noindex, follow', 'website'],
         '/visa'      => ['Visa Services | Sangu Travel & Tours', 'Apply for tourist and visit visas with document guidance and fast processing through Sangu Travel & Tours.', 'index, follow', 'website'],
         '/umrah'     => ['Umrah Packages | Sangu Travel & Tours', 'Curated Umrah packages with flights, hotels near the Haramain and guided support from Sangu Travel & Tours.', 'index, follow', 'website'],

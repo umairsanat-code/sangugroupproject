@@ -9,7 +9,7 @@
             <strong>Barcelona:</strong> Fly Planet Badalona, Av. Alfonso XIII 496, 08913 Badalona
           </span>
           <span class="topbar-item hide-mobile">
-            <i class="fa-regular fa-clock"></i> Lun–Sáb: 09:30 – 20:30 CET
+            <i class="fa-regular fa-clock"></i> {{ t('Lun–Sáb: 09:30 – 20:30 CET') }}
           </span>
         </div>
         <div class="topbar-right">
@@ -20,14 +20,12 @@
             <span class="flag-icon">🇵🇰</span> +92 308 5092631
           </a>
           <a href="https://wa.me/34672068148?text=Hola%20SanguGroup%2C%20deseo%20informaci%C3%B3n%20sobre%20vuelos%20y%20Umrah" target="_blank" rel="noopener" class="topbar-wa-pill">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp Directo
+            <i class="fa-brands fa-whatsapp"></i> {{ t('WhatsApp Directo') }}
           </a>
-          <div class="topbar-lang hide-mobile">
-            <span class="active" title="Español">ES</span>
+          <div class="topbar-lang" aria-label="Select language">
+            <button type="button" :class="{ active: locale === 'es' }" :aria-pressed="locale === 'es'" title="Español" @click="setLocale('es')">ES</button>
             <span>|</span>
-            <span title="English">EN</span>
-            <span>|</span>
-            <span title="Urdu">UR</span>
+            <button type="button" :class="{ active: locale === 'en' }" :aria-pressed="locale === 'en'" title="English" @click="setLocale('en')">EN</button>
           </div>
         </div>
       </div>
@@ -42,28 +40,27 @@
 
         <!-- Desktop Navigation with Dropdowns -->
         <nav class="nav-main" :class="{ 'open': isMobileMenuOpen }">
-          <router-link to="/" active-class="active" exact @click="closeMobileMenu">Inicio</router-link>
+          <router-link to="/" active-class="active" exact @click="closeMobileMenu">{{ t('Inicio') }}</router-link>
           
-          <router-link to="/flights" active-class="active" @click="closeMobileMenu">Vuelos</router-link>
 
           <!-- Umrah Dropdown -->
           <div class="nav-dropdown-item" @mouseenter="openDropdown = 'umrah'" @mouseleave="openDropdown = null">
             <router-link to="/umrah" active-class="active" class="dropdown-trigger" @click="closeMobileMenu">
-              Umrah <i class="fa-solid fa-chevron-down nav-arrow"></i>
+              {{ t('Umrah') }} <i class="fa-solid fa-chevron-down nav-arrow"></i>
             </router-link>
             <div class="nav-dropdown-menu" :class="{ 'show': openDropdown === 'umrah' }">
               <router-link to="/umrah" class="dropdown-link" @click="closeMobileMenu">
                 <i class="fa-solid fa-kaaba"></i>
                 <div>
-                  <strong>Todos los Paquetes Umrah</strong>
-                  <span>Catálogo general y salidas</span>
+                  <strong>{{ t('Todos los Paquetes Umrah') }}</strong>
+                  <span>{{ t('Catálogo general y salidas') }}</span>
                 </div>
               </router-link>
               <router-link to="/umrah-desde-espana" class="dropdown-link" @click="closeMobileMenu">
                 <i class="fa-solid fa-flag"></i>
                 <div>
-                  <strong>Umrah desde España</strong>
-                  <span>Salidas desde Madrid y Barcelona</span>
+                  <strong>{{ t('Umrah desde España') }}</strong>
+                  <span>{{ t('Salidas desde Madrid y Barcelona') }}</span>
                 </div>
               </router-link>
               <router-link to="/umrah-desde-barcelona" class="dropdown-link" @click="closeMobileMenu">
@@ -107,7 +104,7 @@
           <!-- Visados Dropdown -->
           <div class="nav-dropdown-item" @mouseenter="openDropdown = 'visa'" @mouseleave="openDropdown = null">
             <router-link to="/visa" active-class="active" class="dropdown-trigger" @click="closeMobileMenu">
-              Visados <i class="fa-solid fa-chevron-down nav-arrow"></i>
+              {{ t('Visados') }} <i class="fa-solid fa-chevron-down nav-arrow"></i>
             </router-link>
             <div class="nav-dropdown-menu" :class="{ 'show': openDropdown === 'visa' }">
               <router-link to="/visa" class="dropdown-link" @click="closeMobileMenu">
@@ -148,22 +145,22 @@
             </div>
           </div>
 
-          <router-link to="/hotels" active-class="active" @click="closeMobileMenu">Hoteles</router-link>
+          <router-link to="/hotels" active-class="active" @click="closeMobileMenu">{{ t('Hoteles') }}</router-link>
           
           <router-link to="/agencia-viajes-barcelona" active-class="active" @click="closeMobileMenu">
-            <span class="nav-pill-badge">BCN</span> Agencia Barcelona
+            <span class="nav-pill-badge">BCN</span> {{ t('Agencia Barcelona') }}
           </router-link>
           
-          <router-link to="/gallery" active-class="active" @click="closeMobileMenu">Galería</router-link>
+          <router-link to="/gallery" active-class="active" @click="closeMobileMenu">{{ t('Galería') }}</router-link>
           <router-link to="/esim" active-class="active" @click="closeMobileMenu">eSIM</router-link>
-          <router-link to="/blog" active-class="active" @click="closeMobileMenu">Blog</router-link>
-          <router-link to="/contact" active-class="active" @click="closeMobileMenu">Contacto</router-link>
+          <router-link to="/blog" active-class="active" @click="closeMobileMenu">{{ t('Blog') }}</router-link>
+          <router-link to="/contact" active-class="active" @click="closeMobileMenu">{{ t('Contacto') }}</router-link>
         </nav>
 
         <!-- CTA & Mobile Trigger -->
         <div class="header-cta">
           <a href="https://wa.me/34672068148?text=Hola%2C%20quiero%20pedir%20presupuesto%20de%20viaje" target="_blank" rel="noopener" class="btn btn-gold btn-header-cta hide-mobile">
-            <i class="fa-brands fa-whatsapp"></i> Presupuesto Rápido
+            <i class="fa-brands fa-whatsapp"></i> {{ t('Presupuesto Rápido') }}
           </a>
           <a href="tel:+34672068148" class="icon-btn" title="Llamar a la oficina de Barcelona" aria-label="Llamar">
             <i class="fa-solid fa-phone"></i>
@@ -207,27 +204,26 @@
 
           <!-- Col 2: Servicios Principales -->
           <div>
-            <h4>Servicios Principales</h4>
+            <h4>{{ t('Servicios Principales') }}</h4>
             <ul>
-              <li><router-link to="/flights">Vuelos Internacionales</router-link></li>
               <li><router-link to="/vuelos-internacionales">Vuelos España a Pakistán</router-link></li>
-              <li><router-link to="/umrah">Paquetes Umrah</router-link></li>
+              <li><router-link to="/umrah">{{ t('Paquetes Umrah') }}</router-link></li>
               <li><router-link :to="{ path: '/umrah', query: { group: 1 } }">Salidas Grupales con Muallim</router-link></li>
               <li><router-link to="/visa">Visados de Visita y Turismo</router-link></li>
-              <li><router-link to="/hotels">Reserva de Hoteles</router-link></li>
+              <li><router-link to="/hotels">{{ t('Reserva de Hoteles') }}</router-link></li>
               <li><router-link to="/esim">eSIM de Viaje Internacional</router-link></li>
-              <li><router-link to="/gallery">Galería de Peregrinos</router-link></li>
+              <li><router-link to="/gallery">{{ t('Galería de Peregrinos') }}</router-link></li>
             </ul>
           </div>
 
           <!-- Col 3: España & Umrah Especializado -->
           <div>
-            <h4>España &amp; Umrah</h4>
+            <h4>{{ t('España & Umrah') }}</h4>
             <ul>
-              <li><router-link to="/umrah-desde-espana">Umrah desde España</router-link></li>
+              <li><router-link to="/umrah-desde-espana">{{ t('Umrah desde España') }}</router-link></li>
               <li><router-link to="/umrah-desde-barcelona">Umrah desde Barcelona (BCN)</router-link></li>
               <li><router-link to="/paquetes-umrah">Catálogo Paquetes Umrah</router-link></li>
-              <li><router-link to="/agencia-viajes-barcelona">Agencia de Viajes Badalona</router-link></li>
+              <li><router-link to="/agencia-viajes-barcelona">{{ t('Agencia de Viajes Badalona') }}</router-link></li>
               <li><router-link to="/hoteles-la-meca">Hoteles en La Meca y Medina</router-link></li>
               <li><router-link to="/visados">Tramitación de Visados</router-link></li>
               <li><router-link to="/umrah-2027">Reserva Anticipada Umrah 2027</router-link></li>
@@ -237,9 +233,9 @@
 
           <!-- Col 4: Oficinas y Contacto -->
           <div>
-            <h4>Oficinas &amp; Contacto</h4>
+            <h4>{{ t('Oficinas & Contacto') }}</h4>
             <div class="footer-office-card">
-              <div class="office-title"><span class="flag-icon">🇪🇸</span> Oficina Barcelona (Badalona)</div>
+              <div class="office-title"><span class="flag-icon">🇪🇸</span> {{ t('Oficina Barcelona (Badalona)') }}</div>
               <p class="office-p">Av. Alfonso XIII 496, 08913 Badalona, Barcelona, España</p>
               <p class="office-phones">
                 <a href="tel:+34672068148">+34 672 06 81 48</a> · 
@@ -248,7 +244,7 @@
             </div>
 
             <div class="footer-office-card" style="margin-top: 14px;">
-              <div class="office-title"><span class="flag-icon">🇵🇰</span> Oficina Pakistán (24/7)</div>
+              <div class="office-title"><span class="flag-icon">🇵🇰</span> {{ t('Oficina Pakistán (24/7)') }}</div>
               <p class="office-phones">
                 <a href="tel:+923085092631">+92 308 5092631</a>
               </p>
@@ -256,7 +252,7 @@
 
             <p style="margin-top: 14px; font-size: 13px;">
               <i class="fa-solid fa-envelope" style="color: var(--gold); margin-right: 6px;"></i> sangutravel@gmail.com<br>
-              <i class="fa-solid fa-clock" style="color: var(--gold); margin-right: 6px;"></i> Lunes a Sábado, 9:30h – 20:30h CET
+              <i class="fa-solid fa-clock" style="color: var(--gold); margin-right: 6px;"></i> {{ t('Lunes a Sábado, 9:30h – 20:30h CET') }}
             </p>
           </div>
         </div>
@@ -264,11 +260,11 @@
         <!-- Footer Bottom Bar -->
         <div class="footer-bottom">
           <div class="footer-bottom-copy">
-            <span>© 2026 SanguGroup (Fly Planet Badalona). Todos los derechos reservados.</span>
+            <span>© 2026 SanguGroup (Fly Planet Badalona). {{ t('Todos los derechos reservados.') }}</span>
             <span class="footer-sep">·</span>
-            <router-link to="/terms">Términos y Condiciones</router-link>
+            <router-link to="/terms">{{ t('Términos y Condiciones') }}</router-link>
             <span class="footer-sep">·</span>
-            <router-link to="/about">Sobre Nosotros</router-link>
+            <router-link to="/about">{{ t('Sobre Nosotros') }}</router-link>
             <span class="footer-sep">·</span>
             <router-link to="/contact">Contacto</router-link>
           </div>
@@ -350,6 +346,7 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 import ChatWidget from './ChatWidget.vue';
+import { locale, setLocale, t } from './locale.js';
 
 const isMobileMenuOpen = ref(false);
 const isScrolled = ref(false);
@@ -397,6 +394,7 @@ const socialPlatforms = computed(() => {
 });
 
 onMounted(async () => {
+  document.documentElement.lang = locale.value;
   window.addEventListener('scroll', handleScroll, { passive: true });
   try {
     const res = await window.axios.get('/api/social-links');
@@ -492,6 +490,20 @@ onUnmounted(() => {
 
 .topbar-lang .active {
   color: var(--gold);
+}
+
+.topbar-lang button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.topbar-lang button:hover,
+.topbar-lang button:focus-visible {
+  color: #fff;
 }
 
 .flag-icon {
