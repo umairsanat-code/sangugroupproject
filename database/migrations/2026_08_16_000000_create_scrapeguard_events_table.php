@@ -1,0 +1,3 @@
+<?php
+use Illuminate\Database\Migrations\Migration;use Illuminate\Database\Schema\Blueprint;use Illuminate\Support\Facades\Schema;
+return new class extends Migration{public function up():void{Schema::create('scrapeguard_events',function(Blueprint $t){$t->id();$t->string('ip',45)->index();$t->string('method',10);$t->text('path');$t->json('query')->nullable();$t->longText('body')->nullable();$t->json('headers')->nullable();$t->text('user_agent')->nullable();$t->unsignedTinyInteger('risk_score')->default(0)->index();$t->json('reasons')->nullable();$t->timestamps();$t->index(['ip','created_at']);});}public function down():void{Schema::dropIfExists('scrapeguard_events');}};
